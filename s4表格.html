@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1"><!--边框-->
+        <tr><!--行-->
+            <td>第一行第一列</td>
+            <td>第一行第二列</td>
+        </tr>
+        <tr>
+            <td><a href="http://www.qq.com">第二行第一列跳转到qq官网</a></td>
+        </tr>
+    </table>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>表头1</th>
+                <th>表头2</th>
+                <th>表头3</th>
+                <th>表头4</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td colspan="2">1</td>这一个格子占两列（合并单元格）
+                <td>1</td>
+                <!--<td>1</td>然后再删掉一个-->
+            </tr>
+            下面要把第二行第一个，和第三行第一个合并
+            <tr>
+                <td rowspan="2">1</td>
+                <td>1</td>
+                <td>1</td>
+                <!--<td>1</td>然后再删掉一个-->
+            </tr>
+            <tr>
+                <!--<td>1</td>-->
+                <td>1</td>
+                <td>1</td>
+                <!--<td>1</td>然后再删掉一个-->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
