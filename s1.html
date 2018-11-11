@@ -43,5 +43,35 @@ lang="en"是标签内部的属性-->
     <div>1</div>
     <div>2</div>
 
+    <!--必须要放到form里面-->
+    <form action="要写一个URL，数据提交到这里" method="GET">
+        method=get提交的时候会接到url上给后台发，post会放在内容里提交过去
+        http传会有两部分内容，请求头+请求体（get就是直接放到url请求头里发过去）
+        <!--普通文本-->
+        <input type="text" name="user"/>
+
+        <!--密码标签-->
+        <input type="password" name="email"/>
+        他会把这个打包成一个字典，提交到后台
+        {'user':'用户输入的用户','email':'电子邮件'}
+
+        <!--按钮,只有输入功能-->
+        <input type="button" value="登录1"/>
+        <input type="submit" value="登录2"/>submit才可以提交
+    </form>
+    <br/>
+    <form>
+                <!--普通文本-->
+        <input type="text"/>
+        <!--密码标签-->
+        <input type="password"/>
+        <!--按钮,只有输入功能-->
+        <input type="button" value="登录3"/>
+        <input type="submit" value="登录4"/>
+    </form>
+
+
+
+
 </body>
 </html>
