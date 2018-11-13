@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>存在形式和优先级</title>
+    另外写一个css文件就不用这样写了
+    <style>
+        .c1{
+            background-color: red;
+            color: white;
+        }
+        .c2{
+            font-size: 50px;
+            color: black;/*如果有重合，（c2）下面的优先级高*/
+        }
+    </style>
+    <link rel="stylesheet" href="Commons.css"/>
+</head>
+<body>
+    样式的优先级：标签的style最高，之后的按上面的style标签里最下面的优先级最高
+    <div class="c1 c2" style="color: pink;">李昆昆</div>
+</body>
+</html>

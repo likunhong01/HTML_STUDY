@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        选择器,只要div的id=i1就可以上这个样式（选择器）
+        #i1{
+            background-color: #2459a2;
+            height: 48px;
+        }
+        class选择器：用class=c1来就可以复制这个样式，同时避免了id必须统一的缺陷
+        .c1{
+            background-color: #2459a2;
+            height: 60px;
+        }
+        标签选择器：把所有的div标签变成黑底白字
+        div{
+            background-color: black;
+            color: white;
+        }
+        层级选择器：把span标签里div标签弄成这个样式
+        span div{
+            background-color: black;
+            color: white;
+        }
+        层级：把c1里c2里的div设置成这个样式
+        .c1 .c2 div{
+            background-color: black;
+            color: white;
+        }
+        组合选择器：#或者.都可以实现组合
+        #i1,#i2,#i3{
+            background-color: black;
+            color: white;
+        }
+        属性选择器：
+        把text的设成这个样式
+        input[type='text']{
+            width: 100px;
+            height: 200px;
+        }
+        把自定义的s1设置成这个样式
+        input[n='s1']{
+            width: 100px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="i1"></div>
+    <div id="i1"></div>但不能写多个（不规范）
+    <div class="c1"></div>能写多个
+    <div class="c1"></div>能写多个
+    <div style="background-color: #2459a2;height: 48px;"></div>
+
+    <input type="text" n="s1">
+
+</body>
+</html>
