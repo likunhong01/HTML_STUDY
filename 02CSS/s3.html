@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    这里可以做url的跳转
+    <form action="https://www.sougou.com/web">
+        <input type="text" name="query"/>
+        <input type="submit" value="搜索"/>
+    </form>
+
+    <form>
+        <div>
+            <p>请选择性别：单选</p>
+            男：<input type="radio" name="sex" value="1" checked="checked">
+            女：<input type="radio" name="sex" value="2">
+        </div>
+
+        <div>
+            <p>请选择爱好：多选</p>
+            篮球：<input type="checkbox" name="habit" value="1">
+            足球：<input type="checkbox" name="habit" value="2" checked="checked">
+            台球：<input type="checkbox" name="habit" value="3" checked="checked">
+            网球：<input type="checkbox" name="habit" value="4">
+        </div>
+
+        <div>
+            <p>上传文件</p>
+            <input type="file" name="fname"/>默认哪都上传不了
+            <input type="file" name="fname"/>
+        </div>
+
+    </form>
+    <input type="submit" value="提交">
+    <input type="reset" value="提交">
+
+
+    <textarea name="meno">多行文本输入，默认值写在这里</textarea>
+
+    下拉选择框的使用
+    <select name="city" size="10" multiple="multiple">
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <option value="3">南京</option>
+        <optgroup label="陕西省">
+            <option>西安</option>
+            <option>宝鸡</option>
+        </optgroup>
+    </select>
+
+    超链接
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    target="_blank"可以新开一个网页打开这个跳转
+
+
+    实现页面内部跳转（锚）
+    <a href="#i3">第一章</a>
+    <a href="#i3">第二章</a>
+    <a href="#i3">第三章</a>
+    <a href="#i3">第四章</a>
+
+    <div id="i1" style="height: 600px;">第一章的内容</div>
+    <div id="i2" style="height: 600px;">第二章的内容</div>
+    <div id="i3" style="height: 600px;">第三章的内容</div>
+    <div id="i4" style="height: 600px;">第四章的内容</div>
+
+
+    <!--放图片功能-->
+    <a href="http://www.qq.com"><!--可以把图片加进连接-->
+        <img src="1.jpg" title="1这里是标题，吧鼠标挪过去显示" style="height: 200px;width: 200px;" alt="图片加载不出来显示这个字"/>
+    </a>
+
+    <!--可以变成列表，就是每行一个·-->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <!--可以变成列表，123的形式-->
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+
+    <!--有标题形式的列表-->
+    <dl>
+        <dt>标题</dt>
+        <dd>内容</dd>
+        <dd>内容</dd>
+        <dd>内容</dd>
+    </dl>
+
+
+</body>
+</html>
