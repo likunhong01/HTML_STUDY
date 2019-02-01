@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        .header{
+            background-color: #2459a2;
+            color: white;
+            height: 35px;
+            line-height: 35px;
+        }
+        .content{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 300px;">
+        <div class="item">
+            <div id="i1" class="header" onclick="ChangeMunu('i1');">菜单1</div>
+            <div class="content">
+                <div>内容1</div>
+                <div>内容1</div>
+                <div>内容1</div>
+                <div>内容1</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div id="i2" class="header" onclick="ChangeMunu('i2');">菜单2</div>
+            <div class="content hide">
+                <div>内容2</div>
+                <div>内容2</div>
+                <div>内容2</div>
+                <div>内容2</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div id="i3" class="header" onclick="ChangeMunu('i3');">菜单3</div>
+            <div class="content hide">
+                <div>内容3</div>
+                <div>内容3</div>
+                <div>内容3</div>
+                <div>内容3</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div id="i4" class="header" onclick="ChangeMunu('i4');">菜单4</div>
+            <div class="content hide">
+                <div>内容4</div>
+                <div>内容4</div>
+                <div>内容4</div>
+                <div>内容4</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function ChangeMunu(id) {
+            var cur_header = document.getElementById(id);
+            var menu = cur_header.parentElement.parentElement;
+            var item_list = menu.children;
+            for (var i = 0; i < item_list.length; i++) {
+                item_list[i].children[1].classList.add('hide');// 给每个item的第2个标签加上hide样式
+            }
+            cur_header.nextElementSibling.classList.remove('hide');    // 给通过id找到的标签的下一个兄弟标签（content）去掉hide样式
+        }
+    </script>
+</body>
+</html>
