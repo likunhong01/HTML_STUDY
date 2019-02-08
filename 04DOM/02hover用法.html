@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .item{
+            background-color: #dddddd;
+        }
+
+        /*触发hover*/
+        .item:hover{
+            color: red;
+        }
+
+        /*意思是触发hover的时候，把b再加上这个样式*/
+        .item:hover .b{
+            background-color: #2459a2;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <div class="a">123</div>
+        <div class="b">456</div>
+    </div>
+</body>
+</html>

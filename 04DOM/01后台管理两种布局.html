@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .pg-header{
+            height: 48px;
+            background-color: #2459a2;
+            color: white;
+        }
+        .floatleft{
+            float: left;
+        }
+        .pg-content .menu{
+            position: absolute;
+            top: 48px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: #dddddd;
+        }
+        .pg-content .content{
+            position: absolute;
+            top: 48px;
+            right: 0px;
+            bottom: 0px;
+            left: 200px;
+            /*下面这一行加上，就可以让左菜单固定在左边不滑上去*/
+            overflow: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pg-header"></div>
+
+    <div class="pg-content">
+
+        <div class="menu floatleft">leftmenu</div>
+
+        <div class="content floatleft">
+            <div style="background-color: gray;">
+                <p style="margin: 0px;">content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
