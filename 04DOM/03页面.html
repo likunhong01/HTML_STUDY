@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .hang{
+            display: block;
+        }
+        .pg-header{
+            height: 48px;
+            background-color: #2459a2;
+            color: white;
+            line-height: 48px;
+        }
+        .floatleft{
+            float: left;
+        }
+        .floatright{
+            float: right;
+        }
+        .pg-content .menu{
+            position: absolute;
+            top: 48px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: #dddddd;
+        }
+        .pg-content .content{
+            position: absolute;
+            top: 48px;
+            right: 0px;
+            bottom: 0px;
+            left: 200px;
+            /*下面这一行加上，就可以让左菜单固定在左边不滑上去*/
+            overflow: auto;
+        }
+        .pg-header .logo{
+            width: 200px;
+            background-color: darkblue;
+            text-align: center;
+        }
+        .pg-header .icons{
+            padding: 0 20px;
+        }
+        .pg-header .icons:hover{
+            background-color: #204982;
+        }
+        .pg-header .user{
+            margin-right: 60px;
+            padding: 0 20px;
+            color: white;
+            height: 48px;
+        }
+        .pg-header .user .a .img{
+            height: 40px;
+            width: 40px;
+            margin-top: 4px;
+            border-radius: 50%;
+        }
+
+        .pg-header .user .b{
+            position: absolute;
+            z-index: 20;
+            top: 48px;
+            right: 20px;
+            background: white;
+            color: black;
+            display: none;
+            width: 120px;
+        }
+
+        .pg-header .user:hover{
+            background-color: #204982;
+        }
+
+        .pg-header .user:hover .b{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="pg-header">
+        <div class="logo floatleft">
+            李昆昆
+        </div>
+
+        <div class="user floatright">
+            <a class="a" href="#">
+                <img class="img" src="1.jpg">
+            </a>
+            <div class="b">
+                <a class="hang">我的资料</a>
+                <a class="hang">注销</a>
+            </div>
+        </div>
+
+        <div class="floatright icons">
+            <a>提醒</a>
+            <!--写成小红点-->
+            <span style="
+                border-radius: 50%;
+                display: inline-block;
+                padding: 10px 7px;
+                line-height: 1px;
+                background-color: red;
+                font-size: 12px;">
+                5
+            </span>
+        </div>
+
+        <div class="floatright icons">
+            <a>邮件</a>
+            <span>2</span>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="pg-content">
+
+        <div class="menu floatleft">leftmenu</div>
+
+        <div class="content floatleft">
+            <div style="background-color: gray;">
+                <p style="margin: 0px;">content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+                <p>content</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
