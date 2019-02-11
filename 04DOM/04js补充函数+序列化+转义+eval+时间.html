@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 1、函数3种方法
+        // 普通函数
+        function f() {
+
+        }
+        // 匿名函数
+        setInterval(function () {
+            console.log(123);
+        }, 5000)
+        // 自执行函数：创建函数并且自动执行(1是传入参数)
+        (function (arg) {
+            console.log(arg)
+        })(1)
+
+
+        // 2、序列化
+        li = [11,22,33,44];
+        s = JSON.stringify(li); // 转化为字符串
+        newli = JSON.parse(s);  // 转化为数组
+
+        // 3、转义
+        url = "https://www.sougou.com/web?query=理解";
+        newUrl1 = encodeURI(url);           // 把后面的中文格式化
+        newUrl2 = encodeURIComponent(url);  // 把https：//=等符号也格式化
+        nnurl1 = decodeURI(newUrl);         // 解码
+        nnurl2 = decodeURI(newUrl2)
+
+        // 4、python里exec可以直接执行代码，eval可以直接执行表达式。
+        // JavaScript里eval集合了上面两个功能
+        eval("1+1");
+
+        // 5、时间：通过Date类
+        var d = new Date(); // 封装了当前时间
+        d.getHours();   // 他有很多get方法可以获取
+        d.setHours(45)  // 可以用set直接修改什么什么
+
+
+    </script>
+</body>
+</html>
