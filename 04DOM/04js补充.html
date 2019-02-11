@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 1、函数3种方法
+        // 普通函数
+        function f() {
+
+        }
+        // 匿名函数
+        setInterval(function () {
+            console.log(123);
+        }, 5000)
+        // 自执行函数：创建函数并且自动执行(1是传入参数)
+        (function (arg) {
+            console.log(arg)
+        })(1)
+
+
+        // 2、序列化
+        li = [11,22,33,44];
+        s = JSON.stringify(li); // 转化为字符串
+        newli = JSON.parse(s);  // 转化为数组
+
+        // 3、转义
+        url = "https://www.sougou.com/web?query=理解";
+        newUrl1 = encodeURI(url);           // 把后面的中文格式化
+        newUrl2 = encodeURIComponent(url);  // 把https：//=等符号也格式化
+        nnurl1 = decodeURI(newUrl);         // 解码
+        nnurl2 = decodeURI(newUrl2)
+
+        // 4、python里exec可以直接执行代码，eval可以直接执行表达式。
+        // JavaScript里eval集合了上面两个功能
+        eval("1+1");
+
+        // 5、时间：通过Date类
+        var d = new Date(); // 封装了当前时间
+        d.getHours();   // 他有很多get方法可以获取
+        d.setHours(45)  // 可以用set直接修改什么什么
+
+        // 6、作用域：详见word
+
+        // 7、面向对象
+
+        // 这样写会在内存中占用更多空间，因为每个对象都会吧方法生成一遍
+        function foo(name){
+            this.name = name;
+            this.sayName = function () {
+                console.log(this.name);
+            }
+        }
+        var obj1 = new Foo('lkk1');
+        obj1.name;
+        obj1.sayName();
+
+        var obj2 = new Foo('lkk2');
+        obj1.name;
+        obj2.sayName();
+
+        // 使用原型写面向对象
+        function f1(name) {
+            this.name = name;
+        }
+        // f1的原型
+        f1.prototype = {
+            'sayName' : function () {
+                console.log(this.name);
+            }
+        }
+
+        obj3 = new f1('lkk3');
+        obj3.sayName();
+
+        obj4 = new f1('lkk4');
+        obj4.sayName();
+        // 这样就不会浪费内存空间，相当于把对象的属性传过去使用（使JavaScript的面向对象和其他面向对象语言的调用方法一样）
+
+    </script>
+</body>
+</html>
