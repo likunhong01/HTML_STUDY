@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 6、作用域：
+        // 在python里函数作为作用域
+        // 在其他语言（如java，cpp等）以代码块作为作用域（｛大括号之间是代码块｝），
+
+        // 四句话：
+        // ①JavaScript（不考虑新引入的关键字let）以函数作为作用域。
+        function func(){
+            if(1==1){
+                var name='lkk';
+            }
+         console.log(name);
+        }
+        func(); // 结果为lkk
+
+        // ②函数作用于在函数未被调用之前已经创建。
+        // ③函数的作用域存在作用域链（在嵌套函数里），并且也是在背调用之前创建
+        // 实例1：
+        xo = 'lkk';
+        function f() {
+            var xo = 'eric';
+            function inner() {
+                console.log(xo);
+            }
+            return inner;
+        }
+        var ret = f();
+        ret();
+        // 结果为eric，因为有两个作用域，形成了一个作用域链，当执行ret函数的时候，往上面找上一个作用域找到xo=eric。
+
+        // 实例2：
+        xo1 = 'lkk';
+        function f1() {
+            var xo1 = 'eric';
+            function inner1() {
+                console.log(xo1);
+            }
+            var xo1 = 'tony';
+            return inner1;
+        }
+        var ret1 = f1();
+        ret1();
+        // 结果为tony，xo1被重新创建赋值tony。
+
+        // ④函数内局部变量会提前声明
+        function func(){
+            console.log(x);	// 到这里的时候，函数内部的局部变量会提前声明为undefined（默认值）
+            var x = 'lkk';	// 到这里才会赋值
+            console.log(x);	// 赋值后console.log才会有意义
+        }
+        // 所以结果为undefined。
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="i1">baidu
+    <a>谷<span>ge</span></a>
+    </div>
+
+    <input type="text" id="i2">
+    <select id="i3">
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+    </select>
+    <textarea id="i4"></textarea>
+
+
+    <a></a>
+    搜索框：
+    <div style="width: 600px;margin: 0 auto;">
+        <input id="id1" onfocus="Focus();" onblur="Blur();" type="text" value="请输入关键字">
+    </div>
+
+    这样是用JavaScript写的，还有一种办法简单：
+    <input id="id2" placeholder="请输入关键字">
+
+
+
+
+
+
+    <script>
+        function Focus() {
+            var tag = document.getElementById('id1');
+            var value = tag.value;
+            if(value == "请输入关键字"){
+                tag.value = "";
+            }
+        }
+        function Blur() {
+            var tag = document.getElementById('id1');
+            var value = tag.value;
+            if (value.length == 0){
+                tag.value = "请输入关键字";
+            }
+        }
+    </script>
+</body>
+</html>

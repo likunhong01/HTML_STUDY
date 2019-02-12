@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="status"></div>
+    <input type="button" value="delete" onclick="deleteEle();">
+
+    <script>
+        // 定时器，一直执行，可以清楚
+        var obj = setInterval(function () {
+            console.log(1);
+            clearInterval(obj);
+        }, 1000);
+
+        // 定时器，只执行一次
+        // 3秒后删除
+        function deleteEle() {
+            document.getElementById('status').innerText = "已删除";
+            var obj = setTimeout(function () {
+                document.getElementById('status').innerText = "";
+            },3000);
+            clearTimeout(obj);  // 清除这个定时器
+        }
+    </script>
+</body>
+</html>

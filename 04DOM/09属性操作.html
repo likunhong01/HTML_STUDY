@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="width: 600px;margin: 0 auto;">
+        <input id="id1" placeholder="请输入关键字">
+    </div>
+
+    <script>
+        obj = document.getElementById('id1');
+        obj.setAttribute('placeholder', 'change');  // 增加一个属性
+        obj.removeAttribute('placeholder'); // 删除一个属性
+        obj.attributes; // 获取所有属性
+    </script>
+</body>
+</html>

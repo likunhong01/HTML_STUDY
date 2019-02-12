@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+                // 7、面向对象
+        // 这样写会在内存中占用更多空间，因为每个对象都会吧方法生成一遍
+        function foo(name){
+            this.name = name;
+            this.sayName = function () {
+                console.log(this.name);
+            }
+        }
+        var obj1 = new Foo('lkk1');
+        obj1.name;
+        obj1.sayName();
+
+        var obj2 = new Foo('lkk2');
+        obj1.name;
+        obj2.sayName();
+
+        // 使用原型写面向对象
+        function f1(name) {
+            this.name = name;
+        }
+        // f1的原型
+        f1.prototype = {
+            'sayName' : function () {
+                console.log(this.name);
+            }
+        }
+
+        obj3 = new f1('lkk3');
+        obj3.sayName();
+
+        obj4 = new f1('lkk4');
+        obj4.sayName();
+        // 这样就不会浪费内存空间，相当于把对象的属性传过去使用（使JavaScript的面向对象和其他面向对象语言的调用方法一样）
+
+    </script>
+</body>
+</html>
