@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+事件绑定方法：
+    方法1：
+    <table border="1" width="300px">
+        <tr onmouseover="t1(0);"onmouseout="t2(0);"><td>1</td><td>2</td><td>2</td></tr>
+        <tr onmouseover="t1(1);"onmouseout="t2(1);"><td>1</td><td>2</td><td>2</td></tr>
+        <tr onmouseover="t1(2);"onmouseout="t2(2);"><td>1</td><td>2</td><td>2</td></tr>
+    </table>
+
+    方法2：
+    <table border="1" width="300px">
+        <tr><td>1</td><td>2</td><td>2</td></tr>
+        <tr><td>1</td><td>2</td><td>2</td></tr>
+        <tr><td>1</td><td>2</td><td>2</td></tr>
+    </table>
+
+    <script>
+        // 方法1：
+        function t1(n) {
+            var myTrs = document.getElementsByTagName('tr')[n];
+            myTrs.style.backgroundColor = "red";
+        }
+        function t2(n) {
+            var myTrs = document.getElementsByTagName("tr")[n];
+            myTrs.style.backgroundColor = "";
+        }
+
+        // 方法2：使他相分离（不关联function，从script标签中（这里）让页面动起来）
+        var myTrs1 = document.getElementsByTagName('tr');
+        for (var i = 0; i < myTrs1.length; i++){
+            myTrs1[i].onmouseover = function () {
+                // 谁调用这个函数，这个this就指向谁
+                this.style.backgroundColor = "red";
+                // myTrs1[i].style.backgroundColor = "red";
+                // 思考为什么myTrs1不行？
+                // 因为作用域，函数内部没有执行，等点击执行的时候，i已经等于2了
+            }
+            myTrs1[i].onmouseout = function () {
+                // 谁调用这个函数，这个this就指向谁
+                this.style.backgroundColor = "";
+            }
+        }
+
+        // 方法3
+        var myTrs3 = document.getElementsByTagName('tr');
+        myTrs3.addEventListener('click',function () {
+            console.log('123')
+        })
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    JavaScript语句不会立即执行，
+    active object（ao）
+    分析过程：
+    1形式参数
+        ao.age = undefined;
+        ao.age = 1;
+    2局部变量
+        ao.age = undefined; 不做任何改变（因为第一步有age）
+    3声明表达式
+        ao.age = function()
+    此刻还没执行，现在age就是一个function
+
+
+    <script>
+        function f(age) {
+            console.log(age);   // 现在ao里只有age = agefunction age()
+            var age = 2;        // age改成了2
+            console.log(age);   // age=2
+            function age() {}   // 并没有改变age
+            console.log(age);   // 依然是2
+        }
+        f(1);
+
+    </script>
+</body>
+</html>

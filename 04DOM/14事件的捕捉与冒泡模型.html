@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main{
+            width: 400px;
+            height: 400px;
+            background-color: #2459a2;
+        }
+        #content{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="content"></div>
+    </div>
+
+    <script>
+        var main = document.getElementById('main');
+        var content = document.getElementById('content');
+        main.addEventListener('click', function () {
+            console.log("main");
+        }, false);
+        content.addEventListener('click',function () {
+            console.log("content")
+        }, false);
+        // 根据时间捕捉与冒泡
+        // false的情况下，点击content，content先出来，再是main
+        // true：先出来main，再是content
+    </script>
+</body>
+</html>
