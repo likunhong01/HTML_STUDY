@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            background-color: black;
+            color: wheat;
+        }
+        .content{
+            min-width: 50px;
+
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>左侧菜单，点击标题1，隐藏其他内容，只出现标题一的内容</div>
+    <div style="height: 400px;width: 200px;border: 1px solid #dddddd;">
+        <div class="item">
+            <div class="header">标题一</div>
+            <div class="content">内容</div>
+        </div>
+        <div class="item">
+            <div class="header">标题二</div>
+            <div class="content hide">内容</div>
+        </div>
+        <div class="item">
+            <div class="header">标题三</div>
+            <div class="content hide">内容</div>
+        </div>
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $('.header').click(function () {
+            // 当前点击标签$(this)
+            // 获取某个标签的下一个标签
+            // 获取某个标签的父标签
+            // 获取所有的兄弟标签
+            // 添加样式和移除样式
+
+            // 要用到筛选器，筛选器就是在选择了之后在进行一次选择（相邻或者孩子父亲标签之类的）
+            // $(this).next(); // 下一个标签
+            // $(this).prev(); // 前一个
+            // $(this).parent();   // 父标签
+            // $(this).parents();   // 所有父标签
+            // $(this).parentsUntil();   // 到...为止
+            // $(this).children(); // 孩子
+            // $(this).siblings(); //  所有兄弟标签
+            // $(this).find('.content');    // 在子孙里找
+
+
+            $(this).next().removeClass('hide'); // 让this的下一个标签出现
+            $(this).parent().siblings().find('.content').addClass('hide');  // 给其他几个加上hide
+
+            // JQuery支持链式编程，下面也可以实现上面功能
+            $(this).next().removeClass('hide').parent().siblings().find('.content').addClass('hide');
+        })
+    </script>
+</body>
+</html>

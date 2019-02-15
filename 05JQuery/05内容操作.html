@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="i1">
+
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $('#i1').text();	// 获取文本内容
+        $('#i1').text("<a>1111</a>>");	// 设置文本内容（不解析）
+        $('#i1').html();    // 获取html
+        $('#i1').html("<a>1111</a>>");	// 设置文本内容（解析）
+
+        $('#i1').val(); // 获取值
+        $('#i1').val('2222'); // 设置值
+    </script>
+</body>
+</html>
