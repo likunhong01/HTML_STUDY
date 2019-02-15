@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id='i10' class='c1'>
+        <a>f</a>
+	    <a>f</a>
+    </div>
+
+    <div class='c1'>
+        <a>f</a>
+    </div>
+
+    <div class='c1' aaaaaa="aaaaaa">
+        <div class='c2'> </div>
+    </div>
+
+    <input type='text'/>
+
+    <input type="button" value="1111" onclick="pop1111();">
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        console.log("1111");
+        function pop1111() {
+            console.log("1111");
+        }
+        console.log($('a'));
+        $('a');  // 找到a标签
+        $('.c2');    // 找到c2样式
+        $('#i10');   // 找到id=i10的
+        $('a, .c2, #i10');   // 找到所有内容（并集）
+        $('#i10 a'); // 找到id=i10下的a标签
+        $('#i10>a'); // 只在#i10的子标签中找a,+是兄弟，~是siblings
+        $('#i10>a:first');   // 第一个a标签
+        $('#i10>a:eq(0)');  // 索引第n个a标签
+        $('[aaaaaa]');  // 具有aaaaaa属性的所有标签
+        $('[aaaaaa="123"]');  // aaaaaa属性等于123的的所有标签
+        $('input[type="text"]');    // 找到input标签里type属性是text的标签
+        $(':disabled'); // 找到所有不可以编辑的表单
+        // 具体参照http://jquery.cuishifeng.cn/
+    </script>
+</body>
+</html>
