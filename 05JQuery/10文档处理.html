@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="t1" type="text" />
+    <input id="a1" type="button" value="添加" />
+    <input id="a2" type="button" value="删除" />
+    <input id="a3" type="button" value="复制" />
+
+    <ul id="u1">
+
+        <li>1</li>
+        <li>2</li>
+
+    </ul>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $('#a1').click(function () {
+            var v = $('#t1').val();
+
+            var temp = "<li>" + v + "</li>";
+
+            $('#u1').append(temp);   // 在后面追加
+            // $('#u1').prepend(temp);  // 在前面追加
+            // $('#u1').after(temp)     // 作为兄弟标签追加到后面
+            // $('#u1').before(temp)    // 作为兄弟标签追加到前面
+        });
+
+        $('#a2').click(function () {
+            var index = $('#t1').val();
+            $('#u1 li').eq(index).remove();   // 按索引删除
+            // $('#u1 li').eq(index).empty();    // 按索引清空，但不删除
+        });
+
+        $('#a3').click(function () {
+            var index = $('#t1').val();
+            var v = $('#u1 li').eq(index).clone();  // 复制
+            $('#u1').append(v);
+         });
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        .modal{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 400px;
+            margin-left: -250px;
+            margin-top: -250px;
+            background-color: #eeeeee;
+            z-index: 10;
+        }
+        .shadow{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.6;
+            background-color: black;
+            z-index: 9;
+        }
+        #tb{
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <a onclick="addElement();">添加</a>
+    <table border="1" id="tb">
+        <tr>
+            <!-- 加上了自定义属性-->
+            <td target="hostname">1.1.1.11</td>
+            <td target="port">80</td>
+            <td target="ip">80</td>
+            <td>
+                <a class="edit">编辑</a> | <a class="del">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td target="hostname">1.1.1.12</td>
+            <td target="port">80</td>
+            <td target="ip">80</td>
+            <td>
+                <a class="edit">编辑</a> | <a class="del">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td target="hostname">1.1.1.13</td>
+            <td target="port">80</td>
+            <td target="ip">80</td>
+            <td>
+                <a class="edit">编辑</a> | <a class="del">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td target="hostname">1.1.1.14</td>
+            <td target="port">80</td>
+            <td target="ip">80</td>
+            <td>
+                <a class="edit">编辑</a> | <a class="del">删除</a>
+            </td>
+
+        </tr>
+    </table>
+
+
+    <div class="modal hide">
+        <div>
+            <input name="hostname" type="text"  />
+            <input name="port" type="text" />
+            <input name="ip" type="text" />
+        </div>
+
+        <div>
+            <input type="button" value="取消" onclick="cancelModal();" />
+            <input type="button" value="确定" onclick="confirmModal();" />
+        </div>
+    </div>
+
+    <div class="shadow hide"></div>
+
+
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        function  addElement() {
+            $(".modal,.shadow").removeClass('hide');
+        }
+
+        function cancelModal() {
+            $(".modal,.shadow").addClass('hide');
+            $('.modal input[type="text"]').val("");
+        }
+
+        function confirmModal() {
+            // var trs = [];
+            // $('.model input[type="text"]').each(function () {
+            //     var td = document.createElement('td');
+            //     td.innerHTML = "用户输入的值"
+            // });
+
+            var tr = document.createElement('t');
+            var td1 = document.createElement('td');
+            td1.innerHTML = $('.modal input[name="hostname"]').val();
+            var td2 = document.createElement('td');
+            td2.innerHTML = $('.modal input[name="port"]').val();
+            var td3 = document.createElement('td');
+            td3.innerHTML = $('.modal input[name="ip"]').val();
+
+            $(tr).append(td1);
+            $(tr).append(td2);
+            $(tr).append(td3);
+
+            var td4 = document.createElement('td');
+            td4.innerHTML = "<td>\n" +
+                "                <a class=\"edit\">编辑</a> | <a class=\"del\">删除</a>\n" +
+                "            </td>";
+
+            $(tr).append(td4);
+
+            $('#tb').append(tr);
+
+            $(".modal,.shadow").addClass('hide');
+        }
+
+        $('.edit').click(function(){
+            // 打开遮罩层
+            $(".modal,.shadow").removeClass('hide');
+            // this
+            var tds = $(this).parent().prevAll();
+
+            // 循环获取内容，吧内容放在对话框里
+            // 获取 <td>内容</td> 获取中间的内容
+            // 赋值给input标签中的value
+
+
+            // 当设置了自定义属性后，可以解决中间插入全得改的问题，这4行都可以改了
+            // var port = $(tds[0]).text();
+            // var host = $(tds[1]).text();
+            //
+            // $('.modal input[name="hostname"]').val(host);
+            // $('.modal input[name="port"]').val(port);
+
+
+            tds.each(function () {
+                // 获取td的target属性值，this指tds里每个td
+                var n = $(this).attr('target');
+                // 获取td中的内容
+                var text = $(this).text();
+                // 字符串拼接
+                var a1 = '.modal input[name="';
+                var a2 = '"]';
+                var temp = a1 + n + a2;
+                // 设置值
+                $(temp).val(text);
+            });
+        });
+
+        $('.del').click(function () {
+            $(this).parent().parent().remove();
+        });
+
+
+
+
+    </script>
+</body>
+</html>
