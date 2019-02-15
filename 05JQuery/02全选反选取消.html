@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="全选" onclick="allPick();">
+    <input type="button" value="反选" onclick="reservePick();">
+    <input type="button" value="取消" onclick="cancel();">
+
+
+    <table border="1" >
+        <thead>
+            <tr>
+                <th>选项</th>
+                <th>1</th>
+                <th>2</th>
+            </tr>
+        </thead>
+        <tbody id="tb1">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1,1</td>
+                <td>1,2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>2,1</td>
+                <td>2,2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>3,1</td>
+                <td>3,2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        function allPick() {
+            console.log(11111);
+            $('#tb1 :checkbox').prop('checked',true);
+        }
+        function cancel() {
+            $('#tb1 :checkbox').prop('checked',false);
+        }
+        function reservePick() {
+            $('#tb1 :checkbox').each(function () {
+                // 这里的this是dom对象，所以可以直接用this.checked来设置值
+                // 方法1：
+                if (this.checked){
+                    this.checked = false;
+                }else {
+                    this.checked = true;
+                }
+
+                // jQuery写法，方法2：用prop方法，有一个参数是获取值，有2个参数是设置值
+                if ($(this).prop('checked')){
+                    $(this).prop('checked', false);
+                } else $(this).prop('checked', true);
+
+                // 方法3，用JavaScript三元式语法来直接设置值
+                $(this).prop('checked', $(this).prop('checked')?false:true);
+            })
+        }
+    </script>
+</body>
+</html>
