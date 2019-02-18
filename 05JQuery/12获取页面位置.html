@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        $(window).scrollTop();  // 获取位置
+        $(window).scrollTop(0);  // 设置位置
+        // scrollLeft([val])
+        offset().left;  // 指定标签在html中的坐标
+        offset().top;   // 指定标签在html中的坐标
+        position();     // 指定标签相对父标签（relative）标签的坐标
+
+        // 纯高度，+边框，+外边距， 内边距？？？？
+        // 试一下
+        $('#i1').height();  // 获取标签的高度（纯高度）
+        $('#i1').innerHeight(); // 边框+纯高度
+        $('#i1').outerHeight(); //
+        $('#i1').outerHeight(true);
+    </script>
+</body>
+</html>
