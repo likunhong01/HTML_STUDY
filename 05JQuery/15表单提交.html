@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="f1" action="11css处理模拟点赞.html" method="POST">
+        <div><input name="n1" type="text"></div>
+        <div><input name="n2" type="password"></div>
+        <div><input name="n3" type="text"></div>
+        <div><input name="n4" type="text"></div>
+        <div><input name="n5" type="text"></div>
+
+        <input type="submit" value="提交">
+    </form>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // 当页面框架加载完成后，自动执行（可以忽略图片等因素，绑定时间早一些）
+        $(function () {
+            $(':submit').click(function () {
+                // 这里写，就可以早一些执行
+            });
+        });
+
+        // 当页面（上面的html）全部加载完成，才会出来这里的效果
+        $(':submit').click(function () {
+            var flag = true;
+            $('.error').remove();
+
+            $('#f1').find('input[type="text"], input[type="password"]').each(function () {
+                if ($(this).val().length <= 0) {
+                    flag = false;
+                    var sp = document.createElement('span');
+                    sp.classList.add('error');
+                    sp.innerHTML = '必填';
+                    $(this).after(sp);
+                    // return false;
+                }
+            });
+            return false;
+        });
+
+
+        $(':submit').click(function () {
+            var v = $(this).prev().val();
+            if (v.length > 0){
+                return true;
+            }else {
+                alert('请输入内容');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

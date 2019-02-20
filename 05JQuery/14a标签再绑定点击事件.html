@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    a标签有自带点击事件，
+    可以设置return，当return是false，后面的跳转就不走了
+    <a id="i1" onclick="return clickOn()" href="http://www.baidu.com"></a>
+    <script>
+        // 普通设置方法
+        function clickOn() {
+            alert(123);
+            return false;
+        }
+        // JQuery设置方法,a标签那就不用写return了
+        $('#i1').click(function () {
+            alert(555);
+            return false;
+        });
+    </script>
+</body>
+</html>

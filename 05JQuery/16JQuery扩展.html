@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // 可以自己给JQuery加方法：
+        // 方法1：
+        $.extend({
+            'lkk': function () {
+                return 'lkk';
+            }
+        });
+        var v = $.lkk();    // 调用
+
+        // 方法2：
+        $.fn.extend({
+            'lkk2':function () {
+                return 'lkk2';
+            }
+        });
+        // 必须写一个选择器，然后调用
+        $('#i1').lkk2()
+    </script>
+</body>
+</html>
