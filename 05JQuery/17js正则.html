@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // var str = "lkk_1998_and_0330";
+        // var rep = /\d+/;
+        // rep.exec(str);  // 结果是1998，不管运行几次只匹配第一个数字
+        // // 但他得到的是["1998"]，是一个数组！
+
+
+        text =  "java1 \njava2 \njava3";
+        var rep = /Java\w*/gi;
+        rep.exec(text);
+        // 不区分大小写，结果3个可以以此找到
+
+
+        text =  "java1 \njava2 \njava3";
+        var rep = /java\w*/g;
+        rep.exec(text);
+        // 结果3个可以以此找到
+
+        text = "java1 \njava2 \njava3";
+        var rep = /^java\w*/g;
+        rep.exec(text);
+        // 结果只有java1
+
+        text = "java1 \njava2 \njava3"
+        var rep = /^java\w*/gm;
+        rep.exec(text);
+        // 结果3个都可以找到
+    </script>
+</body>
+</html>
